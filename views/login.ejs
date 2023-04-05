@@ -19,9 +19,11 @@
 <body>
     <!-- Header -->
 
-    <!--FALTA UN IF-->
-
+    <% if (true) { %>
+    <%- include('./partials/headerLogueado.ejs') %>
+    <% } else {%>
     <%- include('./partials/headerNormal.ejs') %>
+    <% } %>
 
     <!-- /Header -->
 
@@ -41,11 +43,11 @@
             </h2>
 
 
-  <!-- footer -->
+            <!-- footer -->
 
-  <%- include('./partials/footer') %>
+            <%- include('./partials/footer') %>
 
-  <!-- /footer -->
+            <!-- /footer -->
 </body>
 
 </html>

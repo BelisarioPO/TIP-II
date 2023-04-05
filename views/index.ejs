@@ -19,9 +19,11 @@
 <body>
   <!-- Header -->
 
-  <!--FALTA UN IF-->
-
-  <%- include('./partials/headerNormal.ejs') %>
+  <% if (true) { %>
+  <%- include('./partials/headerLogueado.ejs') %>
+  <% } else {%>
+    <%- include('./partials/headerNormal.ejs') %>
+  <% } %>
 
   <!-- /Header -->
 
