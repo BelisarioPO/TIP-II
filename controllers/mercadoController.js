@@ -1,20 +1,12 @@
+const dataModule = require("../data/dataModule");
 
 
 const mercadoController = {
     index: function(req, res, next) {
-        res.render('index', { title: 'Express' });
-      },
-    login: function(req,res){
-        res.render("login",{title:"hola"});
+        res.render('index', { title: 'Express', productos: dataModule.productos});
     },
-    register: function(req, res) {
-        return res.render('register')
-      },
-    product: function(req, res) {
-        return res.render('product')
-    },
-    profile: function(req,res) {
-        return res.render('profile')
+    searchResults: function(req,res) {
+        return res.render('search-results')
     }
 }
 
