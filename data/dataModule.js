@@ -73,54 +73,55 @@ const dataModule = {
         {
             userName:"MorganFreeman32" ,
             userComment: "Gran producto me ayudo mucho" ,
-            userImage:"",
+            userImage:"images/YB1.jpg",
         },
         {
             userName:"PelusaX" ,
             userComment: "Recomendado para la casa",
-            userImage:"",
+            userImage: "images/YB2.webp",
         },
         {
             userName: "LupoElGrande",
             userComment:"Malisimo, me revento el microndas" ,
-            userImage:"",
+            userImage: "images/YB3.jpg",
         },
         {
             userName: "TioGrandpa4500",
             userComment:"Producto mediocre, gaste 3 masterballs y no funcionaron" ,
-            userImage:"",
+            userImage: "images/YB4.jpg",
         },
         {
             userName:"AlfajoTerrabus1" ,
             userComment: "Excelente compania en el ambito laboral" ,
-            userImage:"",
+            userImage: "images/YB5.jpg",
         },
         {
             userName: "Laliendre12",
             userComment: "No recomendable, deja pelos por todas partes",
-            userImage:"",
+            userImage: "images/YB6.jpg",
         },
         {
             userName: "SHOCKRESIST" ,
             userComment: "Me hace las cuentas y paga los impuestos",
-            userImage:"",
+            userImage: "images/YB7.jpg",
         },
         {
             userName: "Elpatitofeo",
             userComment: "Excelente producto! A la primera masterball lo atrape",
-            userImage:"",
+            userImage:"images/YB8.jpg",
         },
         {
             userName: "CrazyMonkey11" ,
             userComment: "Abstenerse curiosos, consumen demasiada comida",
-            userImage:"",
+            userImage:"images/YB9.jpg",
         },
         {
             userName: "GuccionmyPJS",
             userComment: "Muy bueno para los jovenes",
-            userImage:"",
+            userImage: "images/YB10.jpg" ,
         },
     ]
+
 }
 
 module.exports = dataModule;

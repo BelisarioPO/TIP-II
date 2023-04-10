@@ -13,7 +13,7 @@ const productController = {
         }
     }
 
-    return res.render('product', {product: encontrado})
+    return res.render('product', {product: encontrado, comment: dataModule.comentarios})
     
     },
     addProduct: function(req,res) {
