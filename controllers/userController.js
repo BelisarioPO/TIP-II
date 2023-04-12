@@ -1,6 +1,6 @@
 const dataModule = require('../data/dataModule')
 
-const profileController = {
+const userController = {
     login: function(req,res){
         res.render("login",{title:"hola"});
     },
@@ -15,4 +15,4 @@ const profileController = {
     }
 }
 
-module.exports = profileController;
+module.exports = userController;
