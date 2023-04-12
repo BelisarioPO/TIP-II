@@ -1,5 +1,6 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
 
 
 /*====== Variables ======*/
@@ -10,7 +11,7 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'DynaPuff', sans-serif
 }
 
 
@@ -29,7 +30,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: #0c8fd4;
 }
 
 ul,
@@ -68,14 +69,19 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: #0c8fd4;
 }
 
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
-}
+  font-family: 'DynaPuff';
 
+}
+.Logo{
+  max-width: 65%;
+  margin-left: 59px;
+}
 .main-header_credit-link {
   font-size: 1.5em;
   margin-top: 20px;
@@ -134,9 +140,11 @@ hr {
 
 .logout{
   background: transparent;
-  border: 0px;
-  cursor: pointer;
-  font-size: 1em;
+    border: 0px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'DynaPuff';
+  
 }
 
 .logout:hover{
@@ -154,7 +162,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/TIP-II/public/images/Banner-pokehub.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -171,7 +179,10 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: #ffffff;
+  margin-top: 124px;
+  font-family: 'DynaPuff';
+
 }
 
 .product-box {
@@ -256,7 +267,9 @@ hr {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
 }
-
+.row{
+  font-family: sans-serif;
+}
 /*====== Footer ======*/
 .main-footer {
   background-color: #ffffff;
