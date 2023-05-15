@@ -8,8 +8,8 @@ CREATE TABLE usuarios (
   foto_perfil VARCHAR(200),
   fecha_nacimiento DATE,
   dni INT,
-  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE productos (
@@ -17,9 +17,10 @@ CREATE TABLE productos (
   id_usuario INT,
   nombre VARCHAR(200),
   descripcion TEXT,
+  img_productos VARCHAR(200),
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
-  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 CREATE TABLE comentarios (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -28,8 +29,8 @@ CREATE TABLE comentarios (
   texto_comentario TEXT,
   FOREIGN KEY (id_post) REFERENCES productos(id),
   FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
-  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 /* 5 USUSARIOS */
@@ -50,34 +51,34 @@ insert into usuarios values
 
 /* 10 POSTEOS */
 insert into productos values 
-(default,1,"Pikachu","Pikachu es un Pokémon de tipo eléctrico introducido en la primera generación. Es el Pokémon más conocido de la historia",default,default);
+(default,1,"Pikachu","Pikachu es un Pokémon de tipo eléctrico introducido en la primera generación. Es el Pokémon más conocido de la historia","images/pika.png",default,default);
 
 insert into productos values 
-(default,2,"Slowpoke","Slowpoke (ヤドン Yadon en japonés) es un Pokémon de tipo agua/psíquico introducido en la primera generación.",default,default);
+(default,2,"Slowpoke","Slowpoke (ヤドン Yadon en japonés) es un Pokémon de tipo agua/psíquico introducido en la primera generación.","images/slowpoke.jpg",default,default);
 
 insert into productos values 
-(default,3,"Charmander","Charmander (ヒトカゲ Hitokage en japonés) es un Pokémon de tipo fuego introducido en la primera generación.",default,default);
+(default,3,"Charmander","Charmander (ヒトカゲ Hitokage en japonés) es un Pokémon de tipo fuego introducido en la primera generación.","images/charmander.jpg",default,default);
 
 insert into productos values 
-(default,4,"Master Ball","Es la mejor de todas, ya que gracias a su ratio de captura nunca falla. Capturará a cualquier Pokémon sin importar el nivel, los PS o problemas de estado que posea.",default,default);
+(default,4,"Master Ball","Es la mejor de todas, ya que gracias a su ratio de captura nunca falla. Capturará a cualquier Pokémon sin importar el nivel, los PS o problemas de estado que posea.","images/master ball.webp",default,default);
 
 insert into productos values 
-(default,5,"Ultra Ball","Tipo de Poké Ball introducido en la primera generación. Tiene más índice de éxito que la Super Ball. Por ende, es la más eficaz en el uso general.",default,default);
+(default,5,"Ultra Ball","Tipo de Poké Ball introducido en la primera generación. Tiene más índice de éxito que la Super Ball. Por ende, es la más eficaz en el uso general.","images/ultra.webp",default,default);
 
 insert into productos values 
-(default,1,"Bulbasaur","Bulbasaur (フシギダネ Fushigidane en japonés) es un Pokémon de tipo planta/veneno introducido en la primera generación.",default,default);
+(default,1,"Bulbasaur","Bulbasaur (フシギダネ Fushigidane en japonés) es un Pokémon de tipo planta/veneno introducido en la primera generación.","images/bulbasaur.png",default,default);
 
 insert into productos values 
-(default,2,"Eve","Eevee (イーブイ Eievui en japonés) es un Pokémon de tipo normal introducido en la primera generación.",default,default);
+(default,2,"Eve","Eevee (イーブイ Eievui en japonés) es un Pokémon de tipo normal introducido en la primera generación.","images/eve.png",default,default);
 
 insert into productos values 
-(default,3,"Vaporeon","Vaporeon (シャワーズ Showers en japonés) es un Pokémon de tipo agua introducido en la primera generación.",default,default);
+(default,3,"Vaporeon","Vaporeon (シャワーズ Showers en japonés) es un Pokémon de tipo agua introducido en la primera generación.","images/vaporeon.png",default,default);
 
 insert into productos values 
-(default,4,"Blastoise","Blastoise es un Pokémon de tipo agua introducido en la primera generación. Es la evolución de Wartortle.",default,default);
+(default,4,"Blastoise","Blastoise es un Pokémon de tipo agua introducido en la primera generación. Es la evolución de Wartortle.","images/blastoise.png",default,default);
 
 insert into productos values 
-(default,5,"Rayquaza","Rayquaza (レックウザ Rayquaza en japonés) es un Pokémon legendario de tipo dragón/volador introducido en la tercera generación.",default,default);
+(default,5,"Rayquaza","Rayquaza (レックウザ Rayquaza en japonés) es un Pokémon legendario de tipo dragón/volador introducido en la tercera generación.","images/rayquaza.png",default,default);
 
 /* 40 COMENTARIOS */
 
