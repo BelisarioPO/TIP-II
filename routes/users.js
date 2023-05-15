@@ -12,4 +12,8 @@ router.get('/profile', userController.profile)
 
 router.get('/edit', userController.editProfile)
 
+router.get('/findAllUsers', userController.findAllUsers)
+
+/*router.get('/findAllComents', userController.findAll)*/
+
 module.exports = router;

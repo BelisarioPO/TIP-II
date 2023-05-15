@@ -1,3 +1,5 @@
+const db = require("../database/models")
+const Productos = db.Productos; //Alias del modelo
 const dataModule = require('../data/dataModule')
 
 const productController = {
@@ -5,6 +7,7 @@ const productController = {
    
 
     showProduct: function(req, res) {
+    
     let id = req.params.id;
     let encontrado = null;    
     for (let i = 0; i < dataModule.productos.length; i++) {
@@ -18,6 +21,16 @@ const productController = {
     },
     addProduct: function(req,res) {
         return res.render('product-add.ejs')
+    },
+    findAllProducts: function(req,res) {
+
+        Productos.findAll()
+        .then(function (result) {
+            return res.render('index', {productos: result})
+        }).catch(function (error) {
+            console.log(error);
+        });
+        
     },
 }
 
