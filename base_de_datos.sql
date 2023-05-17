@@ -1,6 +1,9 @@
 CREATE DATABASE base_de_datos;
 USE base_de_datos;
 
+CREATE DATABASE base_de_datos;
+USE base_de_datos;
+
 CREATE TABLE usuarios (
   id INT PRIMARY KEY AUTO_INCREMENT,
   email VARCHAR(200),
@@ -51,34 +54,34 @@ insert into usuarios values
 
 /* 10 POSTEOS */
 insert into productos values 
-(default,1,"Pikachu","Pikachu es un Pokémon de tipo eléctrico introducido en la primera generación. Es el Pokémon más conocido de la historia","images/pika.png",default,default);
+(default,1,"Pikachu","Pikachu es un Pokémon de tipo eléctrico introducido en la primera generación. Es el Pokémon más conocido de la historia","/images/pika.png",default,default);
 
 insert into productos values 
-(default,2,"Slowpoke","Slowpoke (ヤドン Yadon en japonés) es un Pokémon de tipo agua/psíquico introducido en la primera generación.","images/slowpoke.jpg",default,default);
+(default,2,"Slowpoke","Slowpoke (ヤドン Yadon en japonés) es un Pokémon de tipo agua/psíquico introducido en la primera generación.","/images/slowpoke.jpg",default,default);
 
 insert into productos values 
-(default,3,"Charmander","Charmander (ヒトカゲ Hitokage en japonés) es un Pokémon de tipo fuego introducido en la primera generación.","images/charmander.jpg",default,default);
+(default,3,"Charmander","Charmander (ヒトカゲ Hitokage en japonés) es un Pokémon de tipo fuego introducido en la primera generación.","/images/charmander.jpg",default,default);
 
 insert into productos values 
-(default,4,"Master Ball","Es la mejor de todas, ya que gracias a su ratio de captura nunca falla. Capturará a cualquier Pokémon sin importar el nivel, los PS o problemas de estado que posea.","images/master ball.webp",default,default);
+(default,4,"Master Ball","Es la mejor de todas, ya que gracias a su ratio de captura nunca falla. Capturará a cualquier Pokémon sin importar el nivel, los PS o problemas de estado que posea.","/images/master ball.webp",default,default);
 
 insert into productos values 
-(default,5,"Ultra Ball","Tipo de Poké Ball introducido en la primera generación. Tiene más índice de éxito que la Super Ball. Por ende, es la más eficaz en el uso general.","images/ultra.webp",default,default);
+(default,5,"Ultra Ball","Tipo de Poké Ball introducido en la primera generación. Tiene más índice de éxito que la Super Ball. Por ende, es la más eficaz en el uso general.","/images/ultra.webp",default,default);
 
 insert into productos values 
-(default,1,"Bulbasaur","Bulbasaur (フシギダネ Fushigidane en japonés) es un Pokémon de tipo planta/veneno introducido en la primera generación.","images/bulbasaur.png",default,default);
+(default,1,"Bulbasaur","Bulbasaur (フシギダネ Fushigidane en japonés) es un Pokémon de tipo planta/veneno introducido en la primera generación.","/images/bulbasaur.png",default,default);
 
 insert into productos values 
-(default,2,"Eve","Eevee (イーブイ Eievui en japonés) es un Pokémon de tipo normal introducido en la primera generación.","images/eve.png",default,default);
+(default,2,"Eve","Eevee (イーブイ Eievui en japonés) es un Pokémon de tipo normal introducido en la primera generación.","/images/eve.png",default,default);
 
 insert into productos values 
-(default,3,"Vaporeon","Vaporeon (シャワーズ Showers en japonés) es un Pokémon de tipo agua introducido en la primera generación.","images/vaporeon.png",default,default);
+(default,3,"Vaporeon","Vaporeon (シャワーズ Showers en japonés) es un Pokémon de tipo agua introducido en la primera generación.","/images/vaporeon.png",default,default);
 
 insert into productos values 
-(default,4,"Blastoise","Blastoise es un Pokémon de tipo agua introducido en la primera generación. Es la evolución de Wartortle.","images/blastoise.png",default,default);
+(default,4,"Blastoise","Blastoise es un Pokémon de tipo agua introducido en la primera generación. Es la evolución de Wartortle.","/images/blastoise.png",default,default);
 
 insert into productos values 
-(default,5,"Rayquaza","Rayquaza (レックウザ Rayquaza en japonés) es un Pokémon legendario de tipo dragón/volador introducido en la tercera generación.","images/rayquaza.png",default,default);
+(default,5,"Rayquaza","Rayquaza (レックウザ Rayquaza en japonés) es un Pokémon legendario de tipo dragón/volador introducido en la tercera generación.","/images/rayquaza.png",default,default);
 
 /* 40 COMENTARIOS */
 
@@ -144,7 +147,6 @@ insert into comentarios values
     insert into comentarios values (default,8,3,"Que no comen?",default,default);
     insert into comentarios values (default,9,4,"Comen?",default,default);
     insert into comentarios values (default,10,5,"Gracias",default,default);
-
 
 
 

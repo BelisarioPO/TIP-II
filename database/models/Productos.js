@@ -15,6 +15,9 @@ module.exports = function (sequelize, dataTypes) {
         descripcion:{
             type: dataTypes.STRING,
         },
+        img_productos:{
+            type: dataTypes.STRING,
+        },
         created_at:{
             type: dataTypes.DATE,
         },
