@@ -44,3 +44,4 @@ const Productos = sequelize.define(alias, cols, config);
 return Productos;
 };
 
+
