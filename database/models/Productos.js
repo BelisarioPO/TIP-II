@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER,
         },
         nombre:{
-            type: dataTypes.STRING(200),
+            type: dataTypes.STRING,
         },
         descripcion:{
             type: dataTypes.STRING,
