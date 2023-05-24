@@ -12,7 +12,7 @@
     <!-- product detail -->
     <div class="container products-wrapper">
         <div class="d-flex align-items-center">
-            <h2 class="products-title"><%=productos.nombre%></h2>
+            <h2 class="products-title"><%=producto.nombre%></h2>
             <p class="product-detail-description">
                 <a href="/product/add">Editar</a>
             </p>
@@ -20,25 +20,13 @@
         <div class="product-detail">
             <div class="row">
                 <article class="col-12 col-lg-8 product-detail-info">
-                    <img src="<%=productos.img_productos %>" alt="" class="product-detail-img">
+                    <img src="<%=producto.img_productos %>" alt="" class="product-detail-img">
                     <p class="product-detail-description">
-                    <%=productos.productDes%>
+                    <%=producto.descripcion%>
                     </p>
                 </article>
                 <div class="col-12 col-lg-4">
-                    <section class="comments">
-                        <% for( let i = 0; i <comment.length; i++ ) { %>
-                        <article>
-                            <img src="/<%= comment[i].userImage %>" alt="">
-                            <div class="data">
-                                
-                                <p class="user">
-                                    <strong> <a href="/profile"><%= comment[i].userName %> </a> </strong>
-                                    <%= comment[i].userComment %></p>
-                                    
-                            </div>
-                        </article>
-                        <% } %>
+                    
                     </section>
                     <form class="form" action="" method="POST">
                         <input class="form-input" type="text" value="" placeholder="Agregar comentario">

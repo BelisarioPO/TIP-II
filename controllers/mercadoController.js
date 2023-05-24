@@ -1,3 +1,5 @@
+const db = require("../database/models")
+const Productos = db.Productos; //Alias del modelo
 const dataModule = require("../data/dataModule");
 
 
