@@ -1,8 +1,14 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+
+// requerir session
+const session = require("express-session");
+
 
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
@@ -23,6 +29,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/product', productRouter)
 app.use('/users', usersRouter);
+// SI CCOOKIE EXITE O NO
+/*
+app.use(function(req,res,next){
+if(req.cookies.userId != undefined && req.session.user == undefined){
+  let idUsuarioEnCookie = req.cookies.userId;
+  db.
+}
+else{
+  return next();
+}
+});
+*/
+
+
+// USE SESSION
+app.use(session( { secret : "PokeHub", resave: false, saveUninitialized: true}))
+
+app.use(function(req,res,next){
+  if (req.session.user != undefined){
+    res.locals.user = req.session.user;
+    return next()
+  }
+  return next();
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
