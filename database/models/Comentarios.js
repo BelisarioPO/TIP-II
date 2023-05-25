@@ -1,41 +1,44 @@
 module.exports = function (sequelize, dataTypes) {
-    let alias = "Comentarios"; 
+    let alias = "Comentarios";
     let cols = {
-        id:{
+        id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        id_post:{
+        id_post: {
             type: dataTypes.INTEGER,
         },
-        id_usuario:{
+        id_usuario: {
             type: dataTypes.INTEGER,
         },
-        textocomentario:{
+        textocomentario: {
             type: dataTypes.STRING,
         },
-      
+
     };
-let config = {
-    tableName: 'comentarios',
-    timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
-    underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
-};
-const Comentarios = sequelize.define(alias, cols, config);
+    let config = {
+        tableName: 'comentarios',
+        timestamps: true, //Si la tabla no tiene los campos created_at y updated_at
+        underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
+    };
+    const Comentarios = sequelize.define(alias, cols, config);
 
-/*crear relacion*/
+    /*crear relacion*/
 
-/* Comentarios.associate = function(models){
-    Comentarios.hasMany(models.Productos,{
-        as: "Productos",
-        foreingKey: "id_usuario",
-        otherKey:
-    })
-}; */
+    /*  Comentarios.associate = function (models) {
+          Comentarios.belongsTo(models.Productos, {
+              as: "productos",
+              foreingKey: "id_post",
+          })
+          Comentarios.belongsTo(models.Usuarios, {
+              as: "usuarios",
+              foreignKey: "id_usuario"
+          })
+      }; */
 
 
 
 
-return Comentarios;
+    return Comentarios;
 };

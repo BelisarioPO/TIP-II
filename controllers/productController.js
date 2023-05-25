@@ -3,34 +3,38 @@ const Productos = db.Productos; //Alias del modelo
 
 const productController = {
 
-   
 
- 
-    addProduct: function(req,res) {
+
+
+    addProduct: function (req, res) {
         return res.render('product-add.ejs')
     },
-    findAllProducts: function(req,res) {
+    findAllProducts: function (req, res) {
 
         Productos.findAll()
-        .then(function (result) {
-            return res.render('index', {productos: result})
-        }).catch(function (error) {
-            console.log(error);
-        });
-        
+            .then(function (result) {
+                return res.render('index', {
+                    productos: result
+                })
+            }).catch(function (error) {
+                console.log(error);
+            });
+
     },
-    findProduct : function(req,res){
+    findProduct: function (req, res) {
         let id = req.params.id;
 
         console.log(db.Productos);
 
         db.Productos.findByPk(id)
-        .then (function(result) {
-            console.log(result);
-            return res.render("product",{producto:result})
-        }).catch(function (error) {
-            console.log(error);
-        });
+            .then(function (result) {
+                console.log(result);
+                return res.render("product", {
+                    producto: result
+                })
+            }).catch(function (error) {
+                console.log(error);
+            });
     }
 }
 
