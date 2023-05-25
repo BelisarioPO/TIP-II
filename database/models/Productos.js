@@ -32,16 +32,18 @@ let config = {
 };
 const Productos = sequelize.define(alias, cols, config);
 
-/*crear relacion*/
+/*crear relacion    PRODUCTOS TIENE MUCHOS REGISTROS DE OTRA TABLA (Usuarios)
 
-/* Productos.associate = function (models) {
+Productos.associate = function (models) {
     Productos.belongsTo(models.Usuarios,{
-        as: "Usuarios",
+        as: "usuarios",
         foreingKey: "id_usuario"
     })
 }; */
 
+
+
 return Productos;
-};
+}
 
 

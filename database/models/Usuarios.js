@@ -35,17 +35,15 @@ let config = {
 };
 const Usuarios = sequelize.define(alias, cols, config);
 
-/*crear relacion*/
-/* Usuarios.associate = function(models){
+/*crear relacion
+ Usuarios.associate = function(models){
     Usuarios.hasMany(models.Productos,{
-        as: "Productos",
+        as: "productos",
         foreingKey: "id_usuario"
     })
-}; */
-
-
-
+}; 
+*/
 return Usuarios;
-};
+}
 
 
