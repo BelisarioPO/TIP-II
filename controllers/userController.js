@@ -23,14 +23,21 @@ const userController = {
             if (result != null) {
                 let claveBien = bcrypt.compareSync(password, result.contraseña)
                 if (claveBien){
-                    return res.send('bien mail Bien contra')
+                    /*poner un usuario en sesion*/
+                    req.session.user = result;
+                    /*Click en recordarme*/
+                    if (req.body.recordarme =! undefined) {
+                        res.cookie("idUsuario",result.id,{maxAge: 1000 * 60 * 15})
+                    }
+                    
+                    return res.redirect('/')
                 } else {
                     return res.send('bien mail mal contra') 
                 }
             } else {
                 return res.send('No existe')
             }
-            return res.redirect('/')
+            
         })
         .catch(function(error) {
             console.log(error);

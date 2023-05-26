@@ -1,13 +1,10 @@
 
-  <!-- Header -->
-  <%- include('./partials/head.ejs') %>
-  <% if (false) { %>
+<%= if (locals.user =! undefined) {
+   <%- include('./partials/headerNormal.ejs') %>
+} else {
   <%- include('./partials/headerLogueado.ejs') %>
-  <% } else {%>
-    <%- include('./partials/headerNormal.ejs') %>
-  <% } %>
+}  %>
 
-  <!-- /Header -->
 
 
   <!-- Banner -->
