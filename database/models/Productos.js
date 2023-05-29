@@ -6,7 +6,7 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        id_usuario: {
+        usuario_id: {
             type: dataTypes.INTEGER,
         },
         nombre: {
@@ -32,18 +32,18 @@ module.exports = function (sequelize, dataTypes) {
     };
     const Productos = sequelize.define(alias, cols, config);
 
-    /*crear relacion    PRODUCTOS TIENE MUCHOS REGISTROS DE OTRA TABLA (Usuarios)
+
 
     Productos.associate = function (models) {
         Productos.belongsTo(models.Usuarios,{
-            as: "usuarios",
-            foreingKey: "id_usuario"
+            as: "usuario",
+            foreingKey: "usuario_id"
         })
-        Productos.hasMany(models.Comentarios, {
+         Productos.hasMany(models.Comentarios, {
             as: "comentarios",
-            foreignKey: "id_post"
-        })
-    }; */
+            foreignKey: "post_id"
+        }) 
+    }; 
 
 
 

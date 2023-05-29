@@ -13,26 +13,26 @@ const userController = {
     },
 
     loginRedirect: function(req,res) {
-        let emailEncontrado = req.body.usuario
-        let password = req.body.contraseña
+        let username = req.body.usuario
+        let password = req.body.contrasena
         let filter = {
-            where: [{email: emailEncontrado}]
+            where: [{username: username}]
         };
         Usuarios.findOne(filter)
         .then(function(result){
             if (result != null) {
-                let claveBien = bcrypt.compareSync(password, result.contraseña)
+                let claveBien = bcrypt.compareSync(password, result.contrasena)
                 if (claveBien){
                     /*poner un usuario en sesion*/
-                    req.session.user = result;
+                    req.session.user = result.dataValues;
                     /*Click en recordarme*/
-                    if (req.body.recordarme =! undefined) {
-                        res.cookie("idUsuario",result.id,{maxAge: 1000 * 60 * 15})
+                    if (req.body.recordarme != undefined) {
+                        res.cookie("idUsuario", result.id,{maxAge: 1000 * 60 * 15})
                     }
                     
                     return res.redirect('/')
                 } else {
-                    return res.send('bien mail mal contra') 
+                    return res.send('bien user mal contra') 
                 }
             } else {
                 return res.send('No existe')
@@ -53,8 +53,11 @@ const userController = {
         console.log(info);
         let userSave = {
             email: info.email,
-            userName: info.username,
-            password: bcrypt.hashSync(info.password, 10),
+            username: info.username,
+            contrasena: bcrypt.hashSync(info.password, 10),
+            foto_perfil : info.foto,
+            fecha_nacimiento: info.birthdate,
+            dni: 12345768
         }
 
     Usuarios.create(userSave)

@@ -6,10 +6,10 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        id_post: {
+        post_id: {
             type: dataTypes.INTEGER,
         },
-        id_usuario: {
+        usuario_id: {
             type: dataTypes.INTEGER,
         },
         textocomentario: {
@@ -26,16 +26,16 @@ module.exports = function (sequelize, dataTypes) {
 
     /*crear relacion*/
 
-    /*  Comentarios.associate = function (models) {
+      Comentarios.associate = function (models) {
           Comentarios.belongsTo(models.Productos, {
               as: "productos",
-              foreingKey: "id_post",
+              foreingKey: "post_id",
           })
           Comentarios.belongsTo(models.Usuarios, {
               as: "usuarios",
-              foreignKey: "id_usuario"
+              foreignKey: "usuario_id"
           })
-      }; */
+      }; 
 
 
 

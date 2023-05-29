@@ -1,12 +1,10 @@
 CREATE DATABASE base_de_datos;
 USE base_de_datos;
 
-CREATE DATABASE base_de_datos;
-USE base_de_datos;
-
 CREATE TABLE usuarios (
   id INT PRIMARY KEY AUTO_INCREMENT,
   email VARCHAR(200),
+  username VARCHAR(200),
   contrasena VARCHAR(200),
   foto_perfil VARCHAR(200),
   fecha_nacimiento DATE,
@@ -17,40 +15,40 @@ CREATE TABLE usuarios (
 
 CREATE TABLE productos (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  id_usuario INT,
+  usuario_id INT,
   nombre VARCHAR(200),
   descripcion TEXT,
   img_productos VARCHAR(200),
-  FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 CREATE TABLE comentarios (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  id_post INT,
-  id_usuario INT,
+  post_id INT,
+  usuario_id INT,
   texto_comentario TEXT,
-  FOREIGN KEY (id_post) REFERENCES productos(id),
-  FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+  FOREIGN KEY (post_id) REFERENCES productos(id),
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 /* 5 USUSARIOS */
 insert into usuarios values 
-(default,"salamaleco@gmail.com","BombIran","images/userImage.jpg",'2003-02-02',45075332,default,default);
+(default,"salamaleco@gmail.com","MorganFreeman","BombIran","images/userImage.jpg",'2003-02-02',45075332,default,default);
 
 insert into usuarios values 
-(default,"MorganFreeman32@gmail.com","Boca12","images/userImage.jpg",'2002-02-02',45075331,default,default);
+(default,"MorganFreeman32@gmail.com","Obama","Boca12","images/userImage.jpg",'2002-02-02',45075331,default,default);
 
 insert into usuarios values 
-(default,"PelusaX@gmail.com","Buendia","images/userImage.jpg",'2001-02-02',45075330,default,default);
+(default,"PelusaX@gmail.com","Mandela","Buendia","images/userImage.jpg",'2001-02-02',45075330,default,default);
 
 insert into usuarios values 
-(default,"LupoElGrande@gmail.com","BuenasNoches","images/userImage.jpg",'2000-02-02',45075339,default,default);
+(default,"LupoElGrande@gmail.com","Trump","BuenasNoches","images/userImage.jpg",'2000-02-02',45075339,default,default);
 
 insert into usuarios values 
-(default,"TioGrandpa4500@gmail.com","BuenasTardes","images/userImage.jpg",'2001-02-02',45075338,default,default);
+(default,"TioGrandpa4500@gmail.com","Kennedy","BuenasTardes","images/userImage.jpg",'2001-02-02',45075338,default,default);
 
 /* 10 POSTEOS */
 insert into productos values 
@@ -147,7 +145,6 @@ insert into comentarios values
     insert into comentarios values (default,8,3,"Que no comen?",default,default);
     insert into comentarios values (default,9,4,"Comen?",default,default);
     insert into comentarios values (default,10,5,"Gracias",default,default);
-
 
 
 

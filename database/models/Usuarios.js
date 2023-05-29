@@ -9,6 +9,9 @@ module.exports = function (sequelize, dataTypes) {
         email: {
             type: dataTypes.STRING(200),
         },
+        username: {
+            type: dataTypes.STRING(200),
+        },
         contrasena: {
             type: dataTypes.STRING(200),
         },
@@ -35,17 +38,17 @@ module.exports = function (sequelize, dataTypes) {
     };
     const Usuarios = sequelize.define(alias, cols, config);
 
-    /*crear relacion*/
-    /*  Usuarios.associate = function (models) {
+ 
+      Usuarios.associate = function (models) {
           Usuarios.hasMany(models.Productos, {
-              as: "productos",
-              foreingKey: "id_usuario"
+              as: "producto",
+              foreingKey: "usuario_id"
           })
-          Usuarios.hasMany(models.Comentarios, {
+           Usuarios.hasMany(models.Comentarios, {
               as: "usuarios",
-              foreignKey: "id_usuario"
-          })
-      }; */
+              foreignKey: "usuario_id"
+          }) 
+      }; 
 
     return Usuarios;
 }

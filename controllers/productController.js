@@ -3,9 +3,6 @@ const Productos = db.Productos; //Alias del modelo
 
 const productController = {
 
-
-
-
     addProduct: function (req, res) {
         return res.render('product-add.ejs')
     },
@@ -13,10 +10,9 @@ const productController = {
 
         Productos.findAll()
             .then(function (result) {
-                return res.render('index', {
-                    productos: result
+                return res.render('index', {productos : result})
                 })
-            }).catch(function (error) {
+            .catch(function (error) {
                 console.log(error);
             });
 
@@ -26,12 +22,14 @@ const productController = {
 
         console.log(db.Productos);
 
+        let rel = [{}]
+
         db.Productos.findByPk(id)
             .then(function (result) {
-                console.log(result);
-                return res.render("product", {
+                 return res.render("product", {
                     producto: result
-                })
+                }) 
+                
             }).catch(function (error) {
                 console.log(error);
             });

@@ -15,18 +15,22 @@
         <div class="col-12">
             <h2 class="products-title">Registrate</h2>
         </div>
-        !-- Show the "ultimos" products -->
+       
         <h2 class="col-12"> </h2>
 
 
         <form action="" method="POST">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required>
+
+            <label for="password">Foto:</label>
+            <input type="text" id="foto" name="foto" required>
 
             <label for="birthdate">Fecha de nacimiento:</label>
             <input type="date" id="birthdate" name="birthdate" required>
@@ -36,8 +40,6 @@
         </form>
 
 
-
-        !-- footer -->
 
         <%- include('./partials/footer') %>
 

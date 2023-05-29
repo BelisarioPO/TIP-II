@@ -16,6 +16,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+app.use(session({ secret: "PokeHub", resave: false, saveUninitialized: true }))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -26,49 +27,50 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/product', productRouter)
-app.use('/users', usersRouter);
-
 // SI CCOOKIE EXITE O NO
 
-app.use(function(req,res,next){
-if(req.cookies.idUsuario != undefined && req.session.user == undefined){
-  let idUsuarioEnCookie = req.cookies.idUsuario;
-  db.Usuarios.findByPk(idUsuarioEnCookie)
-  .then(function (user) {
-    req.session.user = user.dataValues;
-    res.locals.user =  user.dataValues;
+app.use(function (req, res, next) {
+  if (req.cookies.idUsuario != undefined && req.session.user == undefined) {
+    let idUsuarioEnCookie = req.cookies.idUsuario;
+    db.Usuarios.findByPk(idUsuarioEnCookie)
+      .then(function (user) {
+        req.session.user = user.dataValues;
+        res.locals.user = user.dataValues;
+        return next();
+      }).catch(function (error) {
+        console.log(error);
+      });
+  }
+  else {
     return next();
-  }).catch(function(error) {
-    console.log(error);
-  });
-}
-else{
-  return next();
-}
+  }
 });
 
 
 
 // USE SESSION
-app.use(session( { secret : "PokeHub", resave: false, saveUninitialized: true}))
 
-app.use(function(req,res,next){
-  if (req.session.user != undefined){
+app.use(function (req, res, next) {
+  if (req.session.user != undefined) {
     res.locals.user = req.session.user;
     return next()
   }
   return next();
 });
 
+app.use('/', indexRouter);
+app.use('/product', productRouter)
+app.use('/users', usersRouter);
+
+
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
