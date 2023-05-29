@@ -30,7 +30,7 @@ const userController = {
                         res.cookie("idUsuario", result.id,{maxAge: 1000 * 60 * 15})
                     }
                     
-                    return res.redirect('/')
+                    return res.redirect('/product')
                 } else {
                     return res.send('bien user mal contra') 
                 }

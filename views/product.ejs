@@ -1,8 +1,10 @@
+<%- include('./partials/head')%>
+<% if (locals.user != undefined) { %>
+<%- include('./partials/headerNormal') %>
+<% } else { %>
+<%- include('./partials/headerLogueado') %>
+<% } %>
 
-    <!-- Header -->
-    <%- include('./partials/head.ejs') %>  
-    <%- include('./partials/headerNormal.ejs') %>
-    
     <!-- /Header -->
 
     <!-- product detail -->
