@@ -8,7 +8,7 @@ const userController = {
 
     login: function (req, res) {
         if (req.session.user != undefined) {
-            return res.redirect("/product")
+            return res.redirect("/")
         } else {
             return res.render("login")
         }
@@ -34,7 +34,7 @@ const userController = {
                             res.cookie("idUsuario", result.id, { maxAge: 1000 * 60 * 15 })
                             return res.redirect("/product")
                         }
-                        return res.redirect('/product')
+                        return res.redirect('/')
                     } else {
                         return res.send('/users/login')
                     }

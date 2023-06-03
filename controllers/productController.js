@@ -10,17 +10,6 @@ const productController = {
             return res.redirect("/users/login")
         }
     },
-    findAllProducts: function (req, res) {
-
-        Productos.findAll()
-            .then(function (result) {
-                return res.render('index', {productos : result})
-                })
-            .catch(function (error) {
-                console.log(error);
-            });
-
-    },
     findProduct: function (req, res) {
         let id = req.params.id;
 

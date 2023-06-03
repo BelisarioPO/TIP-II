@@ -1,14 +1,20 @@
 const db = require("../database/models")
 const Productos = db.Productos; //Alias del modelo
-const dataModule = require("../data/dataModule");
 
 
 const mercadoController = {
-    index: function (req, res, next) {
-        res.render('index', {
-            title: 'Express',
-            productos: dataModule.productos
-        });
+    index: function (req, res) {
+
+        Productos.findAll()
+            .then(function (result) {
+                return res.render('index', {
+                    productos: result
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     },
     searchResults: function (req, res) {
         return res.render('search-results')
