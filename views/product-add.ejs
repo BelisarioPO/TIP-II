@@ -1,12 +1,11 @@
 
     <!-- Header -->
-    <%- include('./partials/head.ejs') %>
-    <% if (true) { %>
-    <%- include('./partials/headerLogueado.ejs') %>
-    <% } else {%>
-    <%- include('./partials/headerNormal.ejs') %>
-    <% } %>
-
+    <% if (locals.user != undefined) { %>
+        <%- include('./partials/headerNormal') %>
+        <% } else { %>
+        <%- include('./partials/headerLogueado') %>
+        <% } %>
+   
     <!-- /Header -->
 
     <!-- Novedades -->

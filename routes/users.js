@@ -5,6 +5,7 @@ var userController = require("../controllers/userController")
 
 
 router.get("/login",userController.login);
+
 router.post('/login', userController.loginRedirect)
 
 router.get('/register', userController.register)

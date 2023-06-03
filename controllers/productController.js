@@ -1,10 +1,14 @@
 const db = require("../database/models")
 const Productos = db.Productos; //Alias del modelo
-
 const productController = {
 
     addProduct: function (req, res) {
-        return res.render('product-add.ejs')
+        if (req.session.user != undefined) {
+            /*Si esta logueado*/
+            return res.render('product-add')
+        } else {
+            return res.redirect("/users/login")
+        }
     },
     findAllProducts: function (req, res) {
 

@@ -1,15 +1,9 @@
-
-<!-- Include Head -->
-
-<%- include('./partials/head.ejs') %>
-
-    <!-- Header -->
-
-    <% if (true) { %>
-    <%- include('./partials/headerLogueado.ejs') %>
-    <% } else {%>
-    <%- include('./partials/headerNormal.ejs') %>
-    <% } %>
+<%- include('./partials/head')%>
+<% if (locals.user != undefined) { %>
+<%- include('./partials/headerNormal') %>
+<% } else { %>
+<%- include('./partials/headerLogueado') %>
+<% } %>
 
     <!-- /Header -->
 
