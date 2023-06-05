@@ -17,6 +17,9 @@ router.get('/edit', userController.editProfile)
 
 router.get('/findAllUsers', userController.findAllUsers)
 
+router.post('/logout', userController.logout)
+
+
 /*router.get('/findAllComents', userController.findAll)*/
 
 module.exports = router;

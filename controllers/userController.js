@@ -32,7 +32,7 @@ const userController = {
                         /*Click en recordarme*/
                         if (req.body.recordarme != undefined) {
                             res.cookie("idUsuario", result.id, { maxAge: 1000 * 60 * 15 })
-                            return res.redirect("/product")
+                            return res.redirect("/")
                         }
                         return res.redirect('/')
                     } else {
@@ -108,6 +108,11 @@ const userController = {
             });
 
     },
+    logout: function (req, res) {
+            res.clearCookie('idUsuario');
+            res.clearCookie('connect.sid');
+            return res.redirect("/")
+    }
 
 }
 module.exports = userController;
