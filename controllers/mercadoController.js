@@ -9,6 +9,7 @@ const mercadoController = {
             where: [{}]
         })
             .then(function (result) {
+                console.log(res.locals.user)
                 return res.render('index', {
                     productos: result
                 })
