@@ -4,25 +4,27 @@
 <% } else { %>
 <%- include('./partials/headerLogueado') %>
 <% } %>
-    <!-- /Header -->
 
-    <!-- Novedades -->
+
     <div class="container products-wrapper">
         <div class="row">
             <div class="col-12">
                 <h2 class="products-title">Agregar productos</h2>
             </div>
-            !-- Show the "ultimos" products --
+
             <h2 class="col-12"></h2>
-            <form action="" method="get">
-                <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" name="imagen">
+            <form action="" method="POST">
 
                 <label for="nombre">Nombre del producto:</label>
                 <input type="text" id="nombre" name="nombre">
 
                 <label for="descripcion">Descrpicion:</label>
                 <input type="text" id="descripcion" name="descripcion">
+
+
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen">
+
 
                 <label for="fecha">Fecha de carga:</label>
                 <input type="date" id="fecha" name="fecha">
@@ -32,8 +34,6 @@
             </form>
 
 
-            !-- footer --
-
             <%- include('./partials/footer') %>
 
-            !-- /footer --
+          

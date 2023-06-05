@@ -17,11 +17,26 @@ const mercadoController = {
             .catch(function (error) {
                 console.log(error);
             });
-
     },
     searchResults: function (req, res) {
         return res.render('search-results')
-    }
+    },
+    resultado: (req, res) =>{
+        let busqueda = req.query.search;
+
+        Productos.findAll(
+            {
+            where:[
+            {nombre: {[op.like]: '%' + busqueda + '%'}}
+             /*where: [{nombre: busqueda }]*/]
+            }
+        ).then(function(result) {
+            return res.render('search-results', {productos : result})
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    },
 }
 
 module.exports = mercadoController;

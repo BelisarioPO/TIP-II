@@ -15,8 +15,10 @@ var productRouter = require('./routes/product');
 var usersRouter = require('./routes/users');
 
 var app = express();
+// Implementar Session
 
 app.use(session({ secret: "PokeHub", resave: false, saveUninitialized: true }))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

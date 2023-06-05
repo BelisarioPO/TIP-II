@@ -75,16 +75,16 @@ const userController = {
                 fecha_nacimiento: info.birthdate,
                 dni: 12345768
             }
+            Usuarios.create(userSave)
+                .then(function (result) {
+                    return res.redirect('/users/login')
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
 
 
-        Usuarios.create(userSave)
-            .then(function (result) {
-                return res.redirect('/users/login')
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
 
     },
 
