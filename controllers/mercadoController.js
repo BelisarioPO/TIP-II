@@ -5,7 +5,9 @@ const Productos = db.Productos; //Alias del modelo
 const mercadoController = {
     index: function (req, res) {
 
-        Productos.findAll()
+        Productos.findAll({
+            where: [{}]
+        })
             .then(function (result) {
                 return res.render('index', {
                     productos: result
