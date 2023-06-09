@@ -1,0 +1,30 @@
+<%- include('./partials/head') %>
+<% if (locals.user == undefined) { %>
+<%- include('./partials/headerNormal') %>
+<% } else { %>
+<%- include('./partials/headerLogueado') %>
+<% } %>
+
+<div class="container products-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="products-title">Editar producto</h2>
+        </div>
+        <h2 class="col-12"></h2>
+        <form action="/product/update/<%=producto.id %>" method="POST">
+
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="descripcion">Descrpicion:</label>
+            <input type="text" id="descripcion" name="descripcion">
+
+
+            <label for="imagen">Imagen:</label>
+            <input type="text" id="imagen" name="imagen">
+
+            <input type="submit" value="Enviar">
+
+        </form>
+
+<%- include('./partials/footer') %>

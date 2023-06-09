@@ -16,6 +16,7 @@ const userController = {
 
     loginRedirect: function (req, res) {
         let username = req.body.usuario
+        let errors = {}
         let password = req.body.contrasena
         let filter = {
             where: [{ username: username }]
@@ -26,8 +27,8 @@ const userController = {
                     let claveBien = bcrypt.compareSync(password, result.contrasena)
                     if (claveBien) {
                         req.session.user = result.dataValues;
+                        console.log( req.session.user)
                         res.locals.user = result.dataValues;
-                        console.log(result)
                         /*poner un usuario en sesion*/
                         /*Click en recordarme*/
                         if (req.body.recordarme != undefined) {
@@ -36,10 +37,12 @@ const userController = {
                         }
                         return res.redirect('/')
                     } else {
-                        return res.send('/users/login')
+                        /*USUARIO BIEN CONTRA MAL*/
+                        errors.message = "Contraseña mal"
+                        res.locals.errors = errors
+                        return res.render('login')
                     }
                 } else {
-                    res.locals.errors.message = "Usuario inexistente o incorrecto"
                     return res.redirect("/users/login")
                 }
 
@@ -62,6 +65,16 @@ const userController = {
         }
         else if (req.body.contrasena == "") {
             errors.message = "Completa la contra"
+            res.locals.errors = errors
+            return res.render("register")
+        }
+        else if (req.body.username == "") {
+            errors.message = "Completa el Usuario"
+            res.locals.errors = errors
+            return res.render("register")
+        }
+        else if (req.body.birthdate == "") {
+            errors.message = "Completa tu fecha de nacimiento"
             res.locals.errors = errors
             return res.render("register")
         }

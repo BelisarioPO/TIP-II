@@ -1,6 +1,6 @@
 const db = require("../database/models")
 const Productos = db.Productos; //Alias del modelo
-
+const op = db.Sequelize.Op
 
 const mercadoController = {
     index: function (req, res) {
@@ -18,17 +18,19 @@ const mercadoController = {
                 console.log(error);
             });
     },
-    searchResults: function (req, res) {
-        return res.render('search-results')
-    },
-    resultado: (req, res) =>{
+
+    searchResults: (req, res) =>{
         let busqueda = req.query.search;
 
         Productos.findAll(
             {
             where:[
-            {nombre: {[op.like]: '%' + busqueda + '%'}}
-             /*where: [{nombre: busqueda }]*/]
+                // La coincidencia debe ser en titulo o descripcion
+            {nombre: {[op.like]: '%' + busqueda + '%'}}],
+            // Orden de search results, el primero siendo el mas reciente
+             order: [
+                ["created_at","DESC"]
+             ]
             }
         ).then(function(result) {
             return res.render('search-results', {productos : result})

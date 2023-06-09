@@ -11,7 +11,9 @@
             <div class="col-12">
                 <h2 class="products-title">Agregar productos</h2>
             </div>
-
+            <% if (locals.errors) { %>
+                <p><%= locals.errors.message %></p>
+               <% } %>
             <h2 class="col-12"></h2>
             <form action="" method="POST">
 
@@ -23,11 +25,7 @@
 
 
                 <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" name="imagen">
-
-
-                <label for="fecha">Fecha de carga:</label>
-                <input type="date" id="fecha" name="fecha">
+                <input type="text" id="imagen" name="imagen">
 
                 <input type="submit" value="Enviar">
 

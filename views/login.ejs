@@ -15,7 +15,10 @@
         </div>
         <h2 class="col-12"> </h2>
 
-
+        <% if (locals.errors) { %>
+            <p><%= locals.errors.message %></p>
+           <% } %>
+           
         <form action="" method="POST">
 
             <label for="usuario">Usuario:</label>

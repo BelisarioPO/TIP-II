@@ -13,7 +13,6 @@ const productController = {
     findProduct: function (req, res) {
         let id = req.params.id;
 
-        console.log(db.Productos);
 
         let rel = [{}]
 
@@ -26,7 +25,81 @@ const productController = {
             }).catch(function (error) {
                 console.log(error);
             });
+    },
+    storeProduct: function (req, res) {
+        let errors = {}
+        if (req.body.nombre == "") {
+            errors.message = "Completa el nombre"
+            res.locals.errors = errors
+            return res.render("product-add")
+        }
+        else if (req.body.descripcion == "") {
+            errors.message = "Completa la descripcion"
+            res.locals.errors = errors
+            return res.render("product-add")
+        
+        }
+        else if (req.body.imagen == "") {
+            errors.message = "Carga la imagen"
+            res.locals.errors = errors
+            return res.render("product-add")
+        
+        }
+        else {
+            let info = req.body;
+            let productSave = {
+                usuario_id: req.session.user.id, 
+                nombre: info.nombre,
+                descripcion: info.descripcion,
+                img_productos: info.imagen
+            }
+            Productos.create(productSave)
+                .then(function (result) {
+                    return res.redirect('/users/profile')
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+
+
+    },
+    showupdateProduct: function (req, res){
+        let id = req.params.id;
+    Productos
+      .findByPk(id)
+      .then((result) => {
+        console.log(result);
+        return res.render("product-update", { producto: result });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    },
+    updateProduct: function (req, res){
+    let id = req.params.id;
+    let info = req.body;
+    Productos.update(info, {
+        where: [{ id: id }],
+      })
+      .then((result) => {
+        return res.redirect("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+       
+    },
+
+    deleteProduct: function (req, res){
+        Productos.destroy({
+            where: {
+                id: req.params.id
+            }
+            
+            })
+        }
     }
-}
 
 module.exports = productController;
