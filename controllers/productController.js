@@ -12,11 +12,12 @@ const productController = {
     },
     findProduct: function (req, res) {
         let id = req.params.id;
+/*let rel = {
+            include: [{ association: "usuario" }, { association: "comentarios" }],
+          }; */
+        
 
-
-        let rel = [{}]
-
-        db.Productos.findByPk(id)
+        db.Productos.findByPk(id/*,rel*/)
             .then(function (result) {
                  return res.render("product", {
                     producto: result
@@ -91,15 +92,15 @@ const productController = {
       });
        
     },
-
     deleteProduct: function (req, res){
-        Productos.destroy({
-            where: {
-                id: req.params.id
-            }
-            
-            })
-        }
-    }
+        let idEliminar = req.body.id;
+        Productos.destroy({where: [{ id: idEliminar }],})
+            .then((result) => {
+                return res.redirect("/");
+              })
+            .catch((err) => {
+                console.log(err);
+              });},
+    };
 
 module.exports = productController;

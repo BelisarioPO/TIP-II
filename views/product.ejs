@@ -14,6 +14,9 @@
             <p class="product-detail-description">
                 <a class ="EDITAR"href="/product/update/<%=producto.id %> ">Editar</a>
             </p>
+            <form action="/product/delete" method="POST">
+                <input type="text" hidden name="id" id="" value="<%= producto.id %>">
+                <input class="btn btnDelete" value="Eliminar" type="submit">
         </div>
         <div class="product-detail">
             <div class="row">
@@ -24,8 +27,9 @@
                     </p>
                 </article>
                 <div class="col-12 col-lg-4">
-                    
-                    </section>
+                    <!-- MOSTRAR COMENTARIOS -->
+                    <!--  -->
+
                     <form class="form" action="" method="POST">
                         <input class="form-input" type="text" value="" placeholder="Agregar comentario">
                         <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
