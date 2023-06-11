@@ -1,5 +1,6 @@
 const db = require("../database/models")
 const Usuarios = db.Usuarios; //Alias del modelo
+const Productos = db.Productos; //Alias del modelo
 const dataModule = require('../data/dataModule');
 const bcrypt = require('bcryptjs')
 const Comentarios = require("../database/models/Comentarios");
@@ -19,7 +20,9 @@ const userController = {
         let errors = {}
         let password = req.body.contrasena
         let filter = {
-            where: [{ username: username }]
+            where: [{
+                username: username
+            }]
         };
         Usuarios.findOne(filter)
             .then(function (result) {
@@ -27,12 +30,14 @@ const userController = {
                     let claveBien = bcrypt.compareSync(password, result.contrasena)
                     if (claveBien) {
                         req.session.user = result.dataValues;
-                        console.log( req.session.user)
+                        console.log(req.session.user)
                         res.locals.user = result.dataValues;
                         /*poner un usuario en sesion*/
                         /*Click en recordarme*/
                         if (req.body.recordarme != undefined) {
-                            res.cookie("idUsuario", result.id, { maxAge: 1000 * 60 * 15 })
+                            res.cookie("idUsuario", result.id, {
+                                maxAge: 1000 * 60 * 15
+                            })
                             return res.redirect("/")
                         }
                         return res.redirect('/')
@@ -62,23 +67,19 @@ const userController = {
             errors.message = "Completa el mail pa"
             res.locals.errors = errors
             return res.render("register")
-        }
-        else if (req.body.contrasena == "") {
+        } else if (req.body.contrasena == "") {
             errors.message = "Completa la contra"
             res.locals.errors = errors
             return res.render("register")
-        }
-        else if (req.body.username == "") {
+        } else if (req.body.username == "") {
             errors.message = "Completa el Usuario"
             res.locals.errors = errors
             return res.render("register")
-        }
-        else if (req.body.birthdate == "") {
+        } else if (req.body.birthdate == "") {
             errors.message = "Completa tu fecha de nacimiento"
             res.locals.errors = errors
             return res.render("register")
-        }
-        else {
+        } else {
             let info = req.body;
             let userSave = {
                 email: info.email,
@@ -102,10 +103,16 @@ const userController = {
     },
 
     profile: function (req, res) {
-        return res.render('profile', {
-            profile: dataModule.usuario,
-            productos: dataModule.productos
-        })
+
+        Productos.findAll()
+            .then(function (result) {
+                return res.render('profile', {
+                    productos: result,
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     },
     editProfile: function (req, res) {
         return res.render('profile-edit')
@@ -122,9 +129,9 @@ const userController = {
 
     },
     logout: function (req, res) {
-            res.clearCookie('idUsuario');
-            res.clearCookie('connect.sid');
-            return res.redirect("/")
+        res.clearCookie('idUsuario');
+        res.clearCookie('connect.sid');
+        return res.redirect("/")
     }
 
 }

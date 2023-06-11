@@ -5,11 +5,8 @@ const op = db.Sequelize.Op
 const mercadoController = {
     index: function (req, res) {
 
-        Productos.findAll({
-            where: [{}]
-        })
+        Productos.findAll()
             .then(function (result) {
-                console.log(res.locals.user)
                 return res.render('index', {
                     productos: result
                 })

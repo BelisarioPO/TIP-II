@@ -4,67 +4,70 @@
 <% } else { %>
 <%- include('./partials/headerLogueado') %>
 <% } %>
-    <!-- /Header -->
+<% console.log(locals.productos)%>
+<!-- /Header -->
 
-    <!-- Datos del usuario -->
-    <section class="info-usuario container products-wrapper">
-        <div class="row">
-            <div class="img-container offset-3 col-2">
-                <img src="/<%=profile.userImage%>" alt="foto de perfil" class="foto-perfil">
-            </div>
-            <div class="data-container col-6">
-                <div class="d-flex align-items-center ">
-                    <h1 class="main-title"><%=profile.userName%>
-                        <a href="/users/edit">
-                            <i class="fas fa-cog"></i>
-                        </a>
-                    </h1>
-                    <a class="btn mt-3 ml-4" href="">SEGUIR</a>
-                </div>
-                <div>
-                    <ul class="">
-                        <li>8 productos</li>
-                        <li>200 seguidores</li>
-                        <li>300 comentarios</li>
-                    </ul>
-                </div>
-            </div>
+<!-- Datos del usuario -->
+<section class="info-usuario container products-wrapper">
+    <div class="row">
+        <div class="img-container offset-3 col-2">
+            <img src="/<%=locals.user.foto_perfil%>" alt="foto de perfil" class="foto-perfil">
         </div>
-    </section>
-    <!-- /Datos del usuario -->
-
-    <!-- Mis productos -->
-    <div class="container products-wrapper">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="products-title">Mis productos</h2>
-            </div>
-            <!-- Show mis productos -->
-            
-            <% for( let i = 0; i < productos.length; i++ ) { %>
-                <div class="col-12 col-sm-6 col-lg-3">
-                  <section class="product-box">
-                    <a href="/product/detail/<%= productos[i].id %>">
-                      <figure class="product-box_image">
-                        <img src="/<%=productos[i].productImage %>" alt="">
-                      </figure>
-                      <article class="product-box_data">
-                        <h2><%= productos[i].productName %></h2>
-                        <p><%= productos[i].productDes %></p>
-                        <p>Comentarios: 12</p>
-                      </article>
+        <div class="data-container col-6">
+            <div class="d-flex align-items-center ">
+                <h1 class="main-title"><%=locals.user.username%>
+                    <a href="/users/edit">
+                        <i class="fas fa-cog"></i>
                     </a>
-                  </section>
-                </div>
-              <% } %>
-           
+                </h1>
+                <a class="btn mt-3 ml-4" href="">SEGUIR</a>
+            </div>
+            <div>
+                <ul class="">
+                    <li>8 productos</li>
+                    <li>200 seguidores</li>
+                    <li>300 comentarios</li>
+                </ul>
+            </div>
         </div>
     </div>
-    <!-- /Mis productos -->
+</section>
+<!-- /Datos del usuario -->
+
+<!-- Mis productos -->
+<div class="container products-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="products-title">Mis productos</h2>
+        </div>
+        <!-- Show mis productos -->
+
+        <% for( let i = 0; i < productos.length; i++ ) { %>
+        <% if (productos[i].usuario_id == locals.user.id) { %>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+                <a href="/product/detail/<%= productos[i].id%>">
+                    <figure class="product-box_image">
+                        <img src="/<%=productos[i].img_productos%>" alt="">
+                    </figure>
+                    <article class="product-box_data">
+                        <h2><%= productos[i].nombre %></h2>
+                        <p><%= productos[i].descripcion %></p>
+                        <p>Comentarios: 12</p>
+                    </article>
+                </a>
+            </section>
+        </div>
+        <% } %>
+        <% } %>
+
+    </div>
+</div>
+<!-- /Mis productos -->
 
 
-    <!-- footer -->
+<!-- footer -->
 
-    <%- include('./partials/footer') %>
+<%- include('./partials/footer') %>
 
-    <!-- /footer -->
+<!-- /footer -->
