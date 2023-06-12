@@ -13,7 +13,10 @@ router.post('/register', userController.store)
 
 router.get('/profile', userController.profile)
 
-router.get('/edit', userController.editProfile)
+
+router.get("/edit/:id",userController.showeditProfile)
+router.post('/edit/:id', userController.editProfile)
+
 
 router.get('/findAllUsers', userController.findAllUsers)
 

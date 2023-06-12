@@ -12,12 +12,11 @@ const productController = {
     },
     findProduct: function (req, res) {
         let id = req.params.id;
-/*let rel = {
+let rel = {
             include: [{ association: "usuario" }, { association: "comentarios" }],
-          }; */
+          }; 
         
-
-        db.Productos.findByPk(id/*,rel*/)
+        db.Productos.findByPk(id,rel)
             .then(function (result) {
                  return res.render("product", {
                     producto: result
@@ -79,6 +78,7 @@ const productController = {
       });
     },
     updateProduct: function (req, res){
+    let errors = {}
     let id = req.params.id;
     let info = req.body;
     Productos.update(info, {
@@ -93,14 +93,10 @@ const productController = {
        
     },
     deleteProduct: function (req, res){
-        let idEliminar = req.body.id;
-        Productos.destroy({where: [{ id: idEliminar }],})
-            .then((result) => {
-                return res.redirect("/");
-              })
-            .catch((err) => {
-                console.log(err);
-              });},
+    let idEliminar = req.body.id;
+    Productos.destroy({where: [{ id: idEliminar }],})
+        .then((result) => {return res.redirect("/");})
+        .catch((err) => {console.log(err);});},
     };
 
 module.exports = productController;

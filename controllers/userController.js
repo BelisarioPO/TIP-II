@@ -16,9 +16,19 @@ const userController = {
     },
 
     loginRedirect: function (req, res) {
-        let username = req.body.usuario
         let errors = {}
+        let username = req.body.usuario
+        if (username == "") {
+            errors.message = "Completa el usuario"
+            res.locals.errors = errors
+            return res.render("login")
+        }
         let password = req.body.contrasena
+        if (password == "") {
+            errors.message = "Completa la contraseña"
+            res.locals.errors = errors
+            return res.render("login")
+        }
         let filter = {
             where: [{
                 username: username
@@ -78,8 +88,13 @@ const userController = {
         } else if (req.body.birthdate == "") {
             errors.message = "Completa tu fecha de nacimiento"
             res.locals.errors = errors
-            return res.render("register")
-        } else {
+            return res.render("register")    
+        }
+            else if (req.body.dni == "") {
+            errors.message = "Completa tu DNI"
+            res.locals.errors = errors
+            return res.render("register")}
+        else {
             let info = req.body;
             let userSave = {
                 email: info.email,
@@ -87,7 +102,7 @@ const userController = {
                 contrasena: bcrypt.hashSync(info.password, 10),
                 foto_perfil: info.foto,
                 fecha_nacimiento: info.birthdate,
-                dni: 12345768
+                dni: info.dni
             }
             Usuarios.create(userSave)
                 .then(function (result) {
@@ -114,8 +129,30 @@ const userController = {
                 console.log(error);
             })
     },
+    showeditProfile: function (req, res) {
+        let id = req.params.id;
+    Usuarios
+      .findByPk(id)
+      .then((result) => {
+        console.log(result);
+        return res.render("profile-edit", { usuario: result });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    },
     editProfile: function (req, res) {
-        return res.render('profile-edit')
+    let id = req.params.id;
+    let info = req.body;
+    Usuarios.update(info, {
+        where: [{ id: id }],
+      })
+      .then((result) => {
+        return res.redirect("/users/profile");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     },
 
     findAllUsers: function (req, res) {

@@ -5,7 +5,8 @@ const op = db.Sequelize.Op
 const mercadoController = {
     index: function (req, res) {
 
-        Productos.findAll()
+        Productos.findAll({order : [["created_at","DESC"]]})
+        
             .then(function (result) {
                 return res.render('index', {
                     productos: result

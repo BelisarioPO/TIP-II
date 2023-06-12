@@ -15,7 +15,7 @@
                 <a class ="EDITAR"href="/product/update/<%=producto.id %> ">Editar</a>
             </p>
             <form action="/product/delete" method="POST">
-                <input type="text" hidden name="id" id="" value="<%= producto.id %>">
+                <input type="text" hidden name="id" id="" name="id" value="<%= producto.id %>">
                 <input class="btn btnDelete" value="Eliminar" type="submit">
         </div>
         <div class="product-detail">
@@ -29,6 +29,12 @@
                 <div class="col-12 col-lg-4">
                     <!-- MOSTRAR COMENTARIOS -->
                     <!--  -->
+    <section>
+        <% for(let i = 0; i < producto.comentarios.length; i++  ) { %>
+            <img src="<%= producto.comentarios[i].usuario.foto_perfil %>" alt="">
+            <li><%= producto.comentarios[i].usuario_id %> <%= producto.comentarios[i].textocomentario %></li>
+            <% } %>
+    </section>
 
                     <form class="form" action="" method="POST">
                         <input class="form-input" type="text" value="" placeholder="Agregar comentario">
