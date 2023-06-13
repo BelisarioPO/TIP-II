@@ -31,10 +31,11 @@
                     <!--  -->
     <section>
         <% for(let i = 0; i < producto.comentarios.length; i++  ) { %>
-            <img src="<%= producto.comentarios[i].usuario.foto_perfil %>" alt="">
-            <li><%= producto.comentarios[i].usuario_id %> <%= producto.comentarios[i].textocomentario %></li>
+            <!-- <img src="%= producto.comentarios[i].usuario.foto_perfil %>" alt=""> -->
+            <li><%= producto.comentarios[i].usuario_id %> <%= producto.comentarios[i].texto_comentario %></li>
             <% } %>
     </section>
+    
 
                     <form class="form" action="" method="POST">
                         <input class="form-input" type="text" value="" placeholder="Agregar comentario">

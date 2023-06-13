@@ -12,7 +12,7 @@ module.exports = function (sequelize, dataTypes) {
         usuario_id: {
             type: dataTypes.INTEGER,
         },
-        textocomentario: {
+        texto_comentario: {
             type: dataTypes.STRING,
         },
 
