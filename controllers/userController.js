@@ -155,7 +155,7 @@ const userController = {
             where: [{ id: id }],
           })
           .then((result) => {
-            req.session.user = info;
+            
             return res.redirect("/users/profile");
           })
           .catch((err) => {

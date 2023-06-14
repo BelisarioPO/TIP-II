@@ -83,68 +83,47 @@ insert into productos values
 
 /* 40 COMENTARIOS */
 
-insert into comentarios values 
-(default,1,1,"Gran producto me ayudo mucho",default,default);
+insert into comentarios values (default, 3, 5, "Gran producto me ayudó mucho", default, default);
+insert into comentarios values (default, 4, 2, "Recomendado para la casa", default, default);
+insert into comentarios values (default, 8, 4, "Malisimo, me revento el microondas", default, default);
+insert into comentarios values (default, 2, 1, "Producto mediocre, gaste 3 masterballs y no funcionaron", default, default);
+insert into comentarios values (default, 7, 5, "Excelente compania en el ambito laboral", default, default);
+insert into comentarios values (default, 10, 1, "No recomendable, deja pelos por todas partes", default, default);
+insert into comentarios values (default, 6, 2, "Me hace las cuentas y paga los impuestos", default, default);
+insert into comentarios values (default, 5, 4, "Excelente producto! A la primera masterball lo atrape", default, default);
+insert into comentarios values (default, 9, 3, "Abstenerse curiosos, consumen demasiada comida", default, default);
+insert into comentarios values (default, 1, 5, "Muy bueno para los jovenes", default, default);
+insert into comentarios values (default, 4, 1, "pReSio?", default, default);
+insert into comentarios values (default, 2, 4, "Buenas?", default, default);
+insert into comentarios values (default, 5, 2, "Stock?", default, default);
+insert into comentarios values (default, 6, 3, "Buen dia", default, default);
+insert into comentarios values (default, 7, 1, "QUe onda?", default, default);
+insert into comentarios values (default, 1, 4, "Ratio", default, default);
+insert into comentarios values (default, 8, 2, "Quedan?", default, default);
+insert into comentarios values (default, 10, 5, "Volumen?", default, default);
+insert into comentarios values (default, 3, 3, "Area?", default, default);
+insert into comentarios values (default, 9, 1, "Permutas?", default, default);
+insert into comentarios values (default, 1, 5, "Mercadopago?", default, default);
+insert into comentarios values (default, 8, 1, "Transferencia?", default, default);
+insert into comentarios values (default, 2, 3, "Aceptas oro?", default, default);
+insert into comentarios values (default, 6, 2, "pReSio?", default, default);
+insert into comentarios values (default, 4, 4, "Contestas dm?", default, default);
+insert into comentarios values (default, 7, 5, "Llega a uru?", default, default);
+insert into comentarios values (default, 5, 3, "LLega a Bolivia?", default, default);
+insert into comentarios values (default, 3, 1, "Llega a peru?", default, default);
+insert into comentarios values (default, 10, 4, "LLega a mexico?", default, default);
+insert into comentarios values (default, 9, 2, "Llega a paraguay?", default, default);
+insert into comentarios values (default, 5, 5, "Se puede?", default, default);
+insert into comentarios values (default, 6, 3, "Sigue estando?", default, default);
+insert into comentarios values (default, 10, 2, "Sigue?", default, default);
+insert into comentarios values (default, 3, 1, "Toleran calor?", default, default);
+insert into comentarios values (default, 9, 4, "Toleran viento?", default, default);
+insert into comentarios values (default, 8, 2, "Toleran frio?", default, default);
+insert into comentarios values (default, 7, 5, "Que comen?", default, default);
+insert into comentarios values (default, 1, 3, "Que no comen?", default, default);
+insert into comentarios values (default, 2, 4, "Comen?", default, default);
+insert into comentarios values (default, 4, 1, "Gracias", default, default);
 
-insert into comentarios values 
-(default,2,2,"Recomendado para la casa",default,default);
-
-insert into comentarios values 
-(default,3,3,"Malisimo, me revento el microndas",default,default);
-
-insert into comentarios values 
-(default,4,4,"Producto mediocre, gaste 3 masterballs y no funcionaron",default,default);
-
-insert into comentarios values 
-(default,5,5,"Excelente compania en el ambito laboral",default,default);
-
-insert into comentarios values 
-(default,6,1,"No recomendable, deja pelos por todas partes",default,default);
-
-insert into comentarios values 
-(default,7,2,"Me hace las cuentas y paga los impuestos",default,default);
-
-insert into comentarios values 
-(default,8,3,"Excelente producto! A la primera masterball lo atrape",default,default);
-
-insert into comentarios values 
-(default,9,4,"Abstenerse curiosos, consumen demasiada comida",default,default);
-
-insert into comentarios values 
-(default,10,5,"Muy bueno para los jovenes",default,default);
-
-insert into comentarios values 
-(default,1,1,"pReSio?",default,default);
-
-    insert into comentarios values (default,2,2,"Buenas?",default,default);
-	insert into comentarios values (default,3,3,"Stock?",default,default);
-    insert into comentarios values (default,4,4,"Buen dia",default,default);
-    insert into comentarios values (default,5,5,"QUe onda?",default,default);
-    insert into comentarios values (default,6,1,"Ratio",default,default);
-    insert into comentarios values (default,7,2,"Quedan?",default,default);
-    insert into comentarios values (default,8,3,"Volumen?",default,default);
-    insert into comentarios values (default,9,4,"Area?",default,default);
-    insert into comentarios values (default,10,5,"Permutas?",default,default);
-    insert into comentarios values (default,1,1,"Mercadopago?",default,default);
-    insert into comentarios values (default,2,2,"Transferencia?",default,default);
-    insert into comentarios values (default,3,3,"Aceptas oro?",default,default);
-    insert into comentarios values (default,4,4,"pReSio?",default,default);
-    insert into comentarios values (default,5,5,"Contestas dm?",default,default);
-    insert into comentarios values (default,6,1,"Llega a uru?",default,default);
-    insert into comentarios values (default,7,2,"LLega a Bolivia?",default,default);
-    insert into comentarios values (default,8,3,"Llega a peru?",default,default);
-    insert into comentarios values (default,9,4,"LLega a mexico?",default,default);
-    insert into comentarios values (default,10,5,"Llega a paraguay?",default,default);
-    insert into comentarios values (default,1,1,"Se puede?",default,default);
-    insert into comentarios values (default,2,2,"Sigue estando?",default,default);
-    insert into comentarios values (default,3,3,"Sigue?",default,default);
-    insert into comentarios values (default,4,4,"Toleran calor?",default,default);
-    insert into comentarios values (default,5,5,"Toleran viento?",default,default);
-    insert into comentarios values (default,6,1,"Toleran frio?",default,default);
-    insert into comentarios values (default,7,2,"Que comen?",default,default);
-    insert into comentarios values (default,8,3,"Que no comen?",default,default);
-    insert into comentarios values (default,9,4,"Comen?",default,default);
-    insert into comentarios values (default,10,5,"Gracias",default,default);
 
 
 

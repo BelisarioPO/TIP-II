@@ -424,6 +424,9 @@ hr {
   height: 40px;
   border-radius: 50%;
 }
+.negrita{
+  font-style: bold ;
+}
 .comments .data{
   width: 85%;
   
