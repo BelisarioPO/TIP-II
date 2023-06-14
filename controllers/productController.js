@@ -13,7 +13,8 @@ const productController = {
     findProduct: function (req, res) {
         let id = req.params.id;
 let rel = {
-            include: [{ association: "usuario" }, { association: "comentarios" }],
+            include: [{ association: "usuario" }, { association: "comentarios",
+        include: [{ association: "usuarios"}] }],
           }; 
         
         db.Productos.findByPk(id,rel)

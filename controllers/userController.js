@@ -142,18 +142,26 @@ const userController = {
       });
     },
     editProfile: function (req, res) {
-    let id = req.params.id;
-    let info = req.body;
-    Usuarios.update(info, {
-        where: [{ id: id }],
-      })
-      .then((result) => {
-        return res.redirect("/users/profile");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    },
+        let id = req.params.id;
+        let info = req.body;
+                let newuserSave = {
+                    email: info.email,
+                    username: info.username,
+                    contrasena: bcrypt.hashSync(info.contrasena, 10),
+                    foto_perfil: info.foto,
+                    fecha_nacimiento: info.birthdate,
+                    dni: 12345678  }
+        Usuarios.update(newuserSave, {
+            where: [{ id: id }],
+          })
+          .then((result) => {
+            req.session.user = info;
+            return res.redirect("/users/profile");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        },
 
     findAllUsers: function (req, res) {
 

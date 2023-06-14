@@ -31,9 +31,11 @@
                     <!--  -->
     <section>
         <% for(let i = 0; i < producto.comentarios.length; i++  ) { %>
-            <!-- <img src="%= producto.comentarios[i].usuario.foto_perfil %>" alt=""> -->
-            <li><%= producto.comentarios[i].usuario_id %> <%= producto.comentarios[i].texto_comentario %></li>
-            <% } %>
+            <img class="comments img" src= "<%= producto.comentarios[i].usuarios.foto_perfil %>" alt=""> 
+             <li class="comments article"><%= producto.comentarios[i].usuario_id %> <a href="/users/profile/<%= producto.usuario.id %>"></a>
+                 <%= producto.comentarios[i].texto_comentario %></li>
+             <% } %>
+ 
     </section>
     
 
