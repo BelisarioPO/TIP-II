@@ -36,19 +36,19 @@ CREATE TABLE comentarios (
 
 /* 5 USUSARIOS */
 insert into usuarios values 
-(default,"salamaleco@gmail.com","MorganFreeman","BombIran","images/userImage.jpg",'2003-02-02',45075332,default,default);
+(default,"salamaleco@gmail.com","MorganFreeman","BombIran","images/Morgan_Freeman_Deauville_2018.jpg",'2003-02-02',45075332,default,default);
 
 insert into usuarios values 
-(default,"MorganFreeman32@gmail.com","Obama","Boca12","images/userImage.jpg",'2002-02-02',45075331,default,default);
+(default,"MorganFreeman32@gmail.com","Obama","Boca12","images/obama.jpg",'2002-02-02',45075331,default,default);
 
 insert into usuarios values 
-(default,"PelusaX@gmail.com","Mandela","Buendia","images/userImage.jpg",'2001-02-02',45075330,default,default);
+(default,"PelusaX@gmail.com","Mandela","Buendia","images/mandela.jpg",'2001-02-02',45075330,default,default);
 
 insert into usuarios values 
-(default,"LupoElGrande@gmail.com","Trump","BuenasNoches","images/userImage.jpg",'2000-02-02',45075339,default,default);
+(default,"LupoElGrande@gmail.com","Trump","BuenasNoches","images/trump.jfif",'2000-02-02',45075339,default,default);
 
 insert into usuarios values 
-(default,"TioGrandpa4500@gmail.com","Kennedy","BuenasTardes","images/userImage.jpg",'2001-02-02',45075338,default,default);
+(default,"TioGrandpa4500@gmail.com","Kennedy","BuenasTardes","images\kennedy.jpg",'2001-02-02',45075338,default,default);
 
 /* 10 POSTEOS */
 insert into productos values 
