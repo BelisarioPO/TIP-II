@@ -36,19 +36,19 @@ CREATE TABLE comentarios (
 
 /* 5 USUSARIOS */
 insert into usuarios values 
-(default,"salamaleco@gmail.com","MorganFreeman","BombIran","images/Morgan_Freeman_Deauville_2018.jpg",'2003-02-02',45075332,default,default);
+(default,"salamaleco@gmail.com","MorganFreeman","BombIran","https://upload.wikimedia.org/wikipedia/commons/e/e4/Morgan_Freeman_Deauville_2018.jpg",45075332,default,default);
 
 insert into usuarios values 
-(default,"MorganFreeman32@gmail.com","Obama","Boca12","images/obama.jpg",'2002-02-02',45075331,default,default);
+(default,"MorganFreeman32@gmail.com","Obama","Boca12","https://static.wikia.nocookie.net/althistory/images/c/c5/Barack_Obama%2C_U.S._Senator_from_Illinois_portrait_%28cropped%29.png/revision/latest/scale-to-width-down/225?cb=20210528003808&path-prefix=es",'2002-02-02',45075331,default,default);
 
 insert into usuarios values 
-(default,"PelusaX@gmail.com","Mandela","Buendia","images/mandela.jpg",'2001-02-02',45075330,default,default);
+(default,"PelusaX@gmail.com","Mandela","Buendia","https://static.nationalgeographic.es/files/styles/image_3200/public/nelson-mandela-09060209807.jpg?w=400&h=400&q=75",'2001-02-02',45075330,default,default);
 
 insert into usuarios values 
-(default,"LupoElGrande@gmail.com","Trump","BuenasNoches","images/trump.jfif",'2000-02-02',45075339,default,default);
+(default,"LupoElGrande@gmail.com","Trump","BuenasNoches","https://cnnespanol.cnn.com/wp-content/uploads/2023/04/Trump-maquinas-votacion.jpg",'2000-02-02',45075339,default,default);
 
 insert into usuarios values 
-(default,"TioGrandpa4500@gmail.com","Kennedy","BuenasTardes","images\kennedy.jpg",'2001-02-02',45075338,default,default);
+(default,"TioGrandpa4500@gmail.com","Kennedy","BuenasTardes","https://historia.nationalgeographic.com.es/medio/2019/05/28/john-f-kennedy_79f14e9c_748x970.jpg",'2001-02-02',45075338,default,default);
 
 /* 10 POSTEOS */
 insert into productos values 
