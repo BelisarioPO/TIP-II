@@ -39,7 +39,7 @@ insert into usuarios values
 (default,"salamaleco@gmail.com","MorganFreeman","BombIran","https://upload.wikimedia.org/wikipedia/commons/e/e4/Morgan_Freeman_Deauville_2018.jpg",45075332,default,default);
 
 insert into usuarios values 
-(default,"MorganFreeman32@gmail.com","Obama","Boca12","https://static.wikia.nocookie.net/althistory/images/c/c5/Barack_Obama%2C_U.S._Senator_from_Illinois_portrait_%28cropped%29.png/revision/latest/scale-to-width-down/225?cb=20210528003808&path-prefix=es",'2002-02-02',45075331,default,default);
+(default,"MorganFreeman32@gmail.com","Obama","Boca12","https://upload.wikimedia.org/wikipedia/commons/c/c4/President_Barack_Obama_%28cropped%29.jpg",'2002-02-02',45075331,default,default);
 
 insert into usuarios values 
 (default,"PelusaX@gmail.com","Mandela","Buendia","https://static.nationalgeographic.es/files/styles/image_3200/public/nelson-mandela-09060209807.jpg?w=400&h=400&q=75",'2001-02-02',45075330,default,default);
