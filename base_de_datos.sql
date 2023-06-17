@@ -36,7 +36,7 @@ CREATE TABLE comentarios (
 
 /* 5 USUSARIOS */
 insert into usuarios values 
-(default,"salamaleco@gmail.com","MorganFreeman","BombIran","https://upload.wikimedia.org/wikipedia/commons/e/e4/Morgan_Freeman_Deauville_2018.jpg",45075332,default,default);
+(default,"salamaleco@gmail.com","MorganFreeman","BombIran","https://upload.wikimedia.org/wikipedia/commons/e/e4/Morgan_Freeman_Deauville_2018.jpg","2003-02-02",45075332,default,default);
 
 insert into usuarios values 
 (default,"MorganFreeman32@gmail.com","Obama","Boca12","https://upload.wikimedia.org/wikipedia/commons/c/c4/President_Barack_Obama_%28cropped%29.jpg",'2002-02-02',45075331,default,default);

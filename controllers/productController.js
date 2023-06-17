@@ -56,7 +56,7 @@ let rel = {
             }
             Productos.create(productSave)
                 .then(function (result) {
-                    return res.redirect('/users/profile')
+                    return res.redirect('/')
                 })
                 .catch(function (error) {
                     console.log(error);
