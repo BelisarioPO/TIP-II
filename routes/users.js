@@ -11,7 +11,7 @@ router.post('/login', userController.loginRedirect)
 router.get('/register', userController.register)
 router.post('/register', userController.store)
 
-router.get('/profile/:id', userController.profile)
+router.get('/profile', userController.profile)
 
 
 router.get("/edit/:id",userController.showeditProfile)
