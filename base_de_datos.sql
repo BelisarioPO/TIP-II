@@ -123,3 +123,11 @@ insert into comentarios values (default, 7, 5, "Que comen?", default, default);
 insert into comentarios values (default, 1, 3, "Que no comen?", default, default);
 insert into comentarios values (default, 2, 4, "Comen?", default, default);
 insert into comentarios values (default, 4, 1, "Gracias", default, default);
+
+
+
+
+
+
+
+

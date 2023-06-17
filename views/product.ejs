@@ -35,16 +35,16 @@
             <article>
             <img src= "<%= producto.comentarios[i].usuarios.foto_perfil %>" alt=""> 
             <div class="data">
-                <p class="user">
-                <%= producto.comentarios[i].usuarios.username %>:<strong><a href="/users/profile/"<%= producto.usuario.id %>></a></strong>
-                 <%= producto.comentarios[i].texto_comentario %>
+                <a href="/users/profile/<%= producto.usuario.id %>"><p class="user">
+                <%= producto.comentarios[i].usuarios.username %>:</p></a>
+                <p> <%= producto.comentarios[i].texto_comentario %>
                 </p>
              
-
+                
             </article>
             <% } %>
         </section>
-    
+                    
 
                     <form class="form" action="" method="POST">
                         <input class="form-input" type="text" value="" placeholder="Agregar comentario">
