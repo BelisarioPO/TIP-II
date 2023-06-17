@@ -156,7 +156,7 @@ const userController = {
           })
           .then((result) => {
             
-            return res.redirect("/users/profile");
+            return res.redirect("/");
           })
           .catch((err) => {
             console.log(err);
